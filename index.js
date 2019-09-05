@@ -1,0 +1,9 @@
+const app = require("express")()
+const port = process.env.PORT || 4000
+
+app.use(require("cors")())
+app.use(require("body-parser").json())
+
+app.use(require("./event/router"))
+
+app.listen(port, () => console.log(`Listening on :${port}`))
